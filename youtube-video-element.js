@@ -1,14 +1,13 @@
 // https://developers.google.com/youtube/iframe_api_reference
-import { MediaPlayedRangesMixin } from 'media-played-ranges-mixin';
-const EMBED_BASE = 'https://www.youtube.com/embed';
-const EMBED_BASE_NOCOOKIE = 'https://www.youtube-nocookie.com/embed';
-const API_URL = 'https://www.youtube.com/iframe_api';
-const API_GLOBAL = 'YT';
-const API_GLOBAL_READY = 'onYouTubeIframeAPIReady';
+import { MediaPlayedRangesMixin } from "media-played-ranges-mixin";
+const EMBED_BASE = "https://www.youtube.com/embed";
+const EMBED_BASE_NOCOOKIE = "https://www.youtube-nocookie.com/embed";
+const API_URL = "https://www.youtube.com/iframe_api";
+const API_GLOBAL = "YT";
+const API_GLOBAL_READY = "onYouTubeIframeAPIReady";
 const VIDEO_MATCH_SRC =
   /(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=|shorts\/|live\/))((\w|-){11})/;
-const PLAYLIST_MATCH_SRC =
-  /(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/.*?[?&]list=)([\w_-]+)/;
+const PLAYLIST_MATCH_SRC = /(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/.*?[?&]list=)([\w_-]+)/;
 
 /**
  * Parses the `t` parameter from a YouTube URL and converts it to seconds.
@@ -18,40 +17,39 @@ const PLAYLIST_MATCH_SRC =
  */
 function parseStartTime(url) {
   if (!url) return;
-  
+
   // Match t parameter: t=171, t=171s, t=2m51s, t=2m, etc.
   const tMatch = url.match(/[?&]t=([\dms]+)/i);
   if (!tMatch) return;
-  
+
   const tValue = tMatch[1].toLowerCase();
   let totalSeconds = 0;
   let hasValue = false;
-  
+
   // Parse minutes (e.g., "2m" or "2m51s")
   const minutesMatch = tValue.match(/(\d+)m/);
   if (minutesMatch) {
     totalSeconds += parseInt(minutesMatch[1], 10) * 60;
     hasValue = true;
   }
-  
+
   // Parse seconds (e.g., "171s" or "51s" or just "171")
   const secondsMatch = tValue.match(/(\d+)s?$/);
   if (secondsMatch) {
     totalSeconds += parseInt(secondsMatch[1], 10);
     hasValue = true;
   }
-  
+
   return hasValue ? totalSeconds : undefined;
 }
 
 function getTemplateHTML(attrs, props = {}) {
-
   const iframeAttrs = {
     src: serializeIframeUrl(attrs, props),
     frameborder: 0,
-    width: '100%',
-    height: '100%',
-    allow: 'accelerometer; fullscreen; autoplay; encrypted-media; gyroscope; picture-in-picture',
+    width: "100%",
+    height: "100%",
+    allow: "accelerometer; fullscreen; autoplay; encrypted-media; gyroscope; picture-in-picture",
   };
 
   if (props.config?.referrerpolicy) {
@@ -61,10 +59,10 @@ function getTemplateHTML(attrs, props = {}) {
   if (props.config) {
     // Serialize YouTube config on iframe so it can be quickly accessed on first load.
     // Required for React SSR because the custom element is initialized long before React client render.
-    iframeAttrs['data-config'] = JSON.stringify(props.config);
+    iframeAttrs["data-config"] = JSON.stringify(props.config);
   }
 
-  return /*html*/`
+  return /*html*/ `
     <style>
       :host {
         display: inline-block;
@@ -86,18 +84,16 @@ function getTemplateHTML(attrs, props = {}) {
 function serializeIframeUrl(attrs, props) {
   if (!attrs.src) return;
 
-  const embedBase = attrs.src.includes('-nocookie')
-    ? EMBED_BASE_NOCOOKIE
-    : EMBED_BASE;
+  const embedBase = attrs.src.includes("-nocookie") ? EMBED_BASE_NOCOOKIE : EMBED_BASE;
 
   const params = {
     // ?controls=true is enabled by default in the iframe
-    controls: attrs.controls === '' ? null : 0,
+    controls: attrs.controls === "" ? null : 0,
     autoplay: attrs.autoplay,
     loop: attrs.loop,
     mute: attrs.muted,
     playsinline: attrs.playsinline,
-    preload: attrs.preload ?? 'metadata',
+    preload: attrs.preload ?? "metadata",
     // https://developers.google.com/youtube/player_parameters#Parameters
     // origin: globalThis.location?.origin,
     enablejsapi: 1,
@@ -121,27 +117,27 @@ function serializeIframeUrl(attrs, props) {
   const matches = attrs.src.match(PLAYLIST_MATCH_SRC);
   const playlistId = matches && matches[1];
   const extendedParams = {
-    listType: 'playlist',
+    listType: "playlist",
     list: playlistId,
-    ...params
-  }
-  
+    ...params,
+  };
+
   return `${embedBase}?${serialize(extendedParams)}`;
 }
 
 class YoutubeVideoElement extends MediaPlayedRangesMixin(globalThis.HTMLElement ?? class {}) {
   static getTemplateHTML = getTemplateHTML;
-  static shadowRootOptions = { mode: 'open' };
+  static shadowRootOptions = { mode: "open" };
   static observedAttributes = [
-    'autoplay',
-    'controls',
-    'crossorigin',
-    'loop',
-    'muted',
-    'playsinline',
-    'poster',
-    'preload',
-    'src',
+    "autoplay",
+    "controls",
+    "crossorigin",
+    "loop",
+    "muted",
+    "playsinline",
+    "poster",
+    "preload",
+    "src",
   ];
 
   loadComplete = new PublicPromise();
@@ -158,7 +154,7 @@ class YoutubeVideoElement extends MediaPlayedRangesMixin(globalThis.HTMLElement 
 
   constructor() {
     super();
-    this.#upgradeProperty('config');
+    this.#upgradeProperty("config");
   }
 
   get config() {
@@ -173,7 +169,7 @@ class YoutubeVideoElement extends MediaPlayedRangesMixin(globalThis.HTMLElement 
     if (this.#loadRequested) return;
 
     if (!this.shadowRoot) {
-      this.attachShadow({ mode: 'open' });
+      this.attachShadow({ mode: "open" });
     }
 
     const isFirstLoad = !this.#hasLoaded;
@@ -189,7 +185,7 @@ class YoutubeVideoElement extends MediaPlayedRangesMixin(globalThis.HTMLElement 
     this.#loadRequested = null;
 
     this.#readyState = 0;
-    this.dispatchEvent(new Event('emptied'));
+    this.dispatchEvent(new Event("emptied"));
 
     let oldApi = this.api;
     this.api = null;
@@ -200,26 +196,26 @@ class YoutubeVideoElement extends MediaPlayedRangesMixin(globalThis.HTMLElement 
       return;
     }
 
-    this.#textTracksVideo = document.createElement('video');
+    this.#textTracksVideo = document.createElement("video");
     this.textTracks = this.#textTracksVideo.textTracks;
 
-    this.textTracks.addEventListener('change', () => {
-      const active = Array.from(this.textTracks).find((t) => t.mode === 'showing');
-      this.api?.setOption('captions', 'track', active ? { languageCode: active.language } : {});
+    this.textTracks.addEventListener("change", () => {
+      const active = Array.from(this.textTracks).find((t) => t.mode === "showing");
+      this.api?.setOption("captions", "track", active ? { languageCode: active.language } : {});
     });
 
-    this.dispatchEvent(new Event('loadstart'));
+    this.dispatchEvent(new Event("loadstart"));
 
-    let iframe = this.shadowRoot.querySelector('iframe');
+    let iframe = this.shadowRoot.querySelector("iframe");
     let attrs = namedNodeMapToObject(this.attributes);
 
     if (isFirstLoad && iframe) {
-      this.#config = JSON.parse(iframe.getAttribute('data-config') || '{}');
+      this.#config = JSON.parse(iframe.getAttribute("data-config") || "{}");
     }
 
     if (!iframe?.src || iframe.src !== serializeIframeUrl(attrs, this)) {
       this.shadowRoot.innerHTML = getTemplateHTML(attrs, this);
-      iframe = this.shadowRoot.querySelector('iframe');
+      iframe = this.shadowRoot.querySelector("iframe");
     }
 
     const YT = await loadScript(API_URL, API_GLOBAL, API_GLOBAL_READY);
@@ -227,16 +223,16 @@ class YoutubeVideoElement extends MediaPlayedRangesMixin(globalThis.HTMLElement 
       events: {
         onReady: () => {
           this.#readyState = 1; // HTMLMediaElement.HAVE_METADATA
-          this.dispatchEvent(new Event('loadedmetadata'));
-          this.dispatchEvent(new Event('durationchange'));
-          
+          this.dispatchEvent(new Event("loadedmetadata"));
+          this.dispatchEvent(new Event("durationchange"));
+
           // Force the initial volume if it was set
           if (this.#initialVolume !== 1) {
             this.api?.setVolume(this.#initialVolume * 100);
           }
-          
-          this.dispatchEvent(new Event('volumechange'));
-          this.dispatchEvent(new Event('loadcomplete'));
+
+          this.dispatchEvent(new Event("volumechange"));
+          this.dispatchEvent(new Event("loadcomplete"));
           this.isLoaded = true;
           this.loadComplete.resolve();
         },
@@ -244,9 +240,9 @@ class YoutubeVideoElement extends MediaPlayedRangesMixin(globalThis.HTMLElement 
           console.error(error);
           this.#error = {
             code: error.data,
-            message: `YouTube iframe player error #${error.data}; visit https://developers.google.com/youtube/iframe_api_reference#onError for the full error message.`
-          }
-          this.dispatchEvent(new Event('error'));
+            message: `YouTube iframe player error #${error.data}; visit https://developers.google.com/youtube/iframe_api_reference#onError for the full error message.`,
+          };
+          this.dispatchEvent(new Event("error"));
         },
       },
     });
@@ -260,51 +256,42 @@ class YoutubeVideoElement extends MediaPlayedRangesMixin(globalThis.HTMLElement 
       5 (video cued).
     */
 
-    let playFired = false;
-    this.api.addEventListener('onStateChange', (event) => {
+    this.api.addEventListener("onStateChange", (event) => {
       const state = event.data;
-      if (
-        state === YT.PlayerState.PLAYING ||
-        state === YT.PlayerState.BUFFERING
-      ) {
-        if (!playFired) {
-          playFired = true;
-          this.dispatchEvent(new Event('play'));
-        }
-        const captionList = this.api.getOption('captions', 'tracklist') || [];
+      if (state === YT.PlayerState.PLAYING) {
+        this.dispatchEvent(new Event("play"));
+        const captionList = this.api.getOption("captions", "tracklist") || [];
 
         captionList.forEach((t) => {
           if (![...this.textTracks].some((tt) => tt.language === t.languageCode)) {
-            this.#textTracksVideo.addTextTrack('subtitles', t.displayName, t.languageCode);
+            this.#textTracksVideo.addTextTrack("subtitles", t.displayName, t.languageCode);
           }
           this.textTracks = this.#textTracksVideo.textTracks;
         });
+      }
 
-        this.dispatchEvent(new Event('loadstart'));
+      if (state === YT.PlayerState.BUFFERING) {
+        this.dispatchEvent(new Event("waiting"));
       }
 
       if (state === YT.PlayerState.PLAYING) {
         if (this.seeking) {
           this.#seeking = false;
           this.#seekComplete?.resolve();
-          this.dispatchEvent(new Event('seeked'));
+          this.dispatchEvent(new Event("seeked"));
         }
         this.#readyState = 3; // HTMLMediaElement.HAVE_FUTURE_DATA
-        this.dispatchEvent(new Event('playing'));
+        this.dispatchEvent(new Event("playing"));
       } else if (state === YT.PlayerState.PAUSED) {
         const diff = Math.abs(this.currentTime - lastCurrentTime);
         if (!this.seeking && diff > 0.1) {
           this.#seeking = true;
-          this.dispatchEvent(new Event('seeking'));
+          this.dispatchEvent(new Event("seeking"));
         }
-        playFired = false;
-        this.dispatchEvent(new Event('pause'));
+        this.dispatchEvent(new Event("pause"));
       }
       if (state === YT.PlayerState.ENDED) {
-        playFired = false;
-        this.dispatchEvent(new Event('pause'));
-
-        this.dispatchEvent(new Event('ended'));
+        this.dispatchEvent(new Event("ended"));
 
         if (this.loop) {
           this.play();
@@ -312,18 +299,18 @@ class YoutubeVideoElement extends MediaPlayedRangesMixin(globalThis.HTMLElement 
       }
     });
 
-    this.api.addEventListener('onPlaybackRateChange', () => {
-      this.dispatchEvent(new Event('ratechange'));
+    this.api.addEventListener("onPlaybackRateChange", () => {
+      this.dispatchEvent(new Event("ratechange"));
     });
 
-    this.api.addEventListener('onVolumeChange', () => {
+    this.api.addEventListener("onVolumeChange", () => {
       const apiVolume = this.api?.getVolume() / 100;
       this.#initialVolume = apiVolume;
-      this.dispatchEvent(new Event('volumechange'));
+      this.dispatchEvent(new Event("volumechange"));
     });
 
-    this.api.addEventListener('onVideoProgress', () => {
-      this.dispatchEvent(new Event('timeupdate'));
+    this.api.addEventListener("onVideoProgress", () => {
+      this.dispatchEvent(new Event("timeupdate"));
     });
 
     await this.loadComplete;
@@ -335,10 +322,10 @@ class YoutubeVideoElement extends MediaPlayedRangesMixin(globalThis.HTMLElement 
       if (this.seeking && bufferedEnd > 0.1) {
         this.#seeking = false;
         this.#seekComplete?.resolve();
-        this.dispatchEvent(new Event('seeked'));
+        this.dispatchEvent(new Event("seeked"));
       } else if (!this.seeking && diff > 0.1) {
         this.#seeking = true;
-        this.dispatchEvent(new Event('seeking'));
+        this.dispatchEvent(new Event("seeking"));
       }
       lastCurrentTime = this.currentTime;
     }, 50);
@@ -352,7 +339,7 @@ class YoutubeVideoElement extends MediaPlayedRangesMixin(globalThis.HTMLElement 
       }
       if (lastBufferedEnd != bufferedEnd) {
         lastBufferedEnd = bufferedEnd;
-        this.dispatchEvent(new Event('progress'));
+        this.dispatchEvent(new Event("progress"));
       }
     }, 100);
   }
@@ -362,11 +349,11 @@ class YoutubeVideoElement extends MediaPlayedRangesMixin(globalThis.HTMLElement 
 
     // This is required to come before the await for resolving loadComplete.
     switch (attrName) {
-      case 'src':
-      case 'autoplay':
-      case 'controls':
-      case 'loop':
-      case 'playsinline': {
+      case "src":
+      case "autoplay":
+      case "controls":
+      case "loop":
+      case "playsinline": {
         this.load();
       }
     }
@@ -394,12 +381,12 @@ class YoutubeVideoElement extends MediaPlayedRangesMixin(globalThis.HTMLElement 
   }
 
   get src() {
-    return this.getAttribute('src');
+    return this.getAttribute("src");
   }
 
   set src(val) {
     if (this.src == val) return;
-    this.setAttribute('src', val);
+    this.setAttribute("src", val);
   }
 
   get error() {
@@ -425,18 +412,17 @@ class YoutubeVideoElement extends MediaPlayedRangesMixin(globalThis.HTMLElement 
   }
 
   get autoplay() {
-    return this.hasAttribute('autoplay');
+    return this.hasAttribute("autoplay");
   }
 
   set autoplay(val) {
     if (this.autoplay == val) return;
-    this.toggleAttribute('autoplay', Boolean(val));
+    this.toggleAttribute("autoplay", Boolean(val));
   }
 
   get buffered() {
     if (!this.isLoaded) return createTimeRanges();
-    const progress =
-      this.api?.getVideoLoadedFraction() * this.api?.getDuration();
+    const progress = this.api?.getVideoLoadedFraction() * this.api?.getDuration();
     if (progress > 0) {
       return createTimeRanges(0, progress);
     }
@@ -444,12 +430,12 @@ class YoutubeVideoElement extends MediaPlayedRangesMixin(globalThis.HTMLElement 
   }
 
   get controls() {
-    return this.hasAttribute('controls');
+    return this.hasAttribute("controls");
   }
 
   set controls(val) {
     if (this.controls == val) return;
-    this.toggleAttribute('controls', Boolean(val));
+    this.toggleAttribute("controls", Boolean(val));
   }
 
   get currentTime() {
@@ -472,20 +458,20 @@ class YoutubeVideoElement extends MediaPlayedRangesMixin(globalThis.HTMLElement 
 
   set defaultMuted(val) {
     if (this.defaultMuted == val) return;
-    this.toggleAttribute('muted', Boolean(val));
+    this.toggleAttribute("muted", Boolean(val));
   }
 
   get defaultMuted() {
-    return this.hasAttribute('muted');
+    return this.hasAttribute("muted");
   }
 
   get loop() {
-    return this.hasAttribute('loop');
+    return this.hasAttribute("loop");
   }
 
   set loop(val) {
     if (this.loop == val) return;
-    this.toggleAttribute('loop', Boolean(val));
+    this.toggleAttribute("loop", Boolean(val));
   }
 
   set muted(val) {
@@ -512,21 +498,21 @@ class YoutubeVideoElement extends MediaPlayedRangesMixin(globalThis.HTMLElement 
   }
 
   get playsInline() {
-    return this.hasAttribute('playsinline');
+    return this.hasAttribute("playsinline");
   }
 
   set playsInline(val) {
     if (this.playsInline == val) return;
-    this.toggleAttribute('playsinline', Boolean(val));
+    this.toggleAttribute("playsinline", Boolean(val));
   }
 
   get poster() {
-    return this.getAttribute('poster');
+    return this.getAttribute("poster");
   }
 
   set poster(val) {
     if (this.poster == val) return;
-    this.setAttribute('poster', `${val}`);
+    this.setAttribute("poster", `${val}`);
   }
 
   set volume(val) {
@@ -559,10 +545,10 @@ class YoutubeVideoElement extends MediaPlayedRangesMixin(globalThis.HTMLElement 
 }
 
 function serializeAttributes(attrs) {
-  let html = '';
+  let html = "";
   for (const key in attrs) {
     const value = attrs[key];
-    if (value === '') html += ` ${escapeHtml(key)}`;
+    if (value === "") html += ` ${escapeHtml(key)}`;
     else html += ` ${escapeHtml(key)}="${escapeHtml(`${value}`)}"`;
   }
   return html;
@@ -570,12 +556,12 @@ function serializeAttributes(attrs) {
 
 function escapeHtml(str) {
   return str
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&apos;')
-    .replace(/`/g, '&#x60;');
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;")
+    .replace(/`/g, "&#x60;");
 }
 
 function serialize(props) {
@@ -586,7 +572,7 @@ function boolToBinary(props) {
   let p = {};
   for (let key in props) {
     let val = props[key];
-    if (val === true || val === '') p[key] = 1;
+    if (val === true || val === "") p[key] = 1;
     else if (val === false) p[key] = 0;
     else if (val != null) p[key] = val;
   }
@@ -609,10 +595,10 @@ async function loadScript(src, globalName, readyFnName) {
     return self[globalName];
   }
   return (loadScriptCache[src] = new Promise(function (resolve, reject) {
-    const script = document.createElement('script');
+    const script = document.createElement("script");
     script.src = src;
     const ready = () => resolve(self[globalName]);
-    if (readyFnName) (self[readyFnName] = ready);
+    if (readyFnName) self[readyFnName] = ready;
     script.onload = () => !readyFnName && ready();
     script.onerror = reject;
     document.head.append(script);
@@ -639,9 +625,9 @@ function createPlayPromise(player) {
       (fn = () => {
         player.removeEventListener(event, fn);
         cb();
-      })
+      }),
     );
-  })('playing');
+  })("playing");
 }
 
 /**
@@ -684,17 +670,17 @@ function createTimeRanges(start, end) {
 function createTimeRangesObj(ranges) {
   Object.defineProperties(ranges, {
     start: {
-      value: i => ranges[i][0]
+      value: (i) => ranges[i][0],
     },
     end: {
-      value: i => ranges[i][1]
-    }
+      value: (i) => ranges[i][1],
+    },
   });
   return ranges;
 }
 
-if (globalThis.customElements && !globalThis.customElements.get('youtube-video')) {
-  globalThis.customElements.define('youtube-video', YoutubeVideoElement);
+if (globalThis.customElements && !globalThis.customElements.get("youtube-video")) {
+  globalThis.customElements.define("youtube-video", YoutubeVideoElement);
 }
 
 export default YoutubeVideoElement;
