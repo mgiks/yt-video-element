@@ -1,5 +1,65 @@
 # Changelog
 
+## [3.0.0](https://github.com/mgiks/youtube-video-element/compare/nextjs-v2.1.3...nextjs@3.0.0) (2026-09-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove attributes in favor of config property
+
+### Features
+
+* add config support to wistia-video-element  ([9944647](https://github.com/mgiks/youtube-video-element/commit/99446476df650212b6cfa1ace5994f4af7c07e1f))
+* add event support to React wrappers ([8522e2a](https://github.com/mgiks/youtube-video-element/commit/8522e2a7dde94639029b45f52c63ccce77c89ac1))
+* add PeerTube Video Element  ([79fefe9](https://github.com/mgiks/youtube-video-element/commit/79fefe9fbe0729e8dbd880cec378c182a282e142))
+* Add played ranges tracking to iframe based media elements ([#199](https://github.com/mgiks/youtube-video-element/issues/199)) ([f15c263](https://github.com/mgiks/youtube-video-element/commit/f15c2635cc75cd0df954b1037d13c32269a1243c))
+* add shaka-video ([#14](https://github.com/mgiks/youtube-video-element/issues/14)) ([b56fe74](https://github.com/mgiks/youtube-video-element/commit/b56fe743516663d35741b771a03ae12879f84296))
+* add twitch-video-element ([#137](https://github.com/mgiks/youtube-video-element/issues/137)) ([3715889](https://github.com/mgiks/youtube-video-element/commit/3715889f341695dc6882a5028198abfaf8425352))
+* Create TikTok Video Element ([#133](https://github.com/mgiks/youtube-video-element/issues/133)) ([#145](https://github.com/mgiks/youtube-video-element/issues/145)) ([89cf6d3](https://github.com/mgiks/youtube-video-element/commit/89cf6d393710da96108a038530867130fe73d4d3))
+* **example:** add mux-video-react ([a656903](https://github.com/mgiks/youtube-video-element/commit/a656903013f73012d879dc4b2e6e3236a00d363e))
+* use ce-la-react, fix React 19 issues ([#61](https://github.com/mgiks/youtube-video-element/issues/61)) ([0a734e9](https://github.com/mgiks/youtube-video-element/commit/0a734e94149172bfd3019cf03ac3a3e74f395ac1))
+* use config instead of attributes ([#139](https://github.com/mgiks/youtube-video-element/issues/139)) ([f4c8610](https://github.com/mgiks/youtube-video-element/commit/f4c86102e1e07f3eb2d63fa5370bfb1b9061dc5d))
+
+
+### Bug Fixes
+
+* add Airplay support to hls-video ([#40](https://github.com/mgiks/youtube-video-element/issues/40)) ([e4ce158](https://github.com/mgiks/youtube-video-element/commit/e4ce1584d16486fc5d445b130292e92a771fe0b6))
+* **build-react-wrapper:** fix suppressHydrationWarning ([586d221](https://github.com/mgiks/youtube-video-element/commit/586d22106c3618769c753914f84b933b6b92c70f))
+* correct commit message format for volumechange youtube ([#179](https://github.com/mgiks/youtube-video-element/issues/179)) ([#188](https://github.com/mgiks/youtube-video-element/issues/188)) ([eb8ff39](https://github.com/mgiks/youtube-video-element/commit/eb8ff39d23f64072da8562aae2957c74d2491fa3))
+* **custom-media-element:** fix track/source sync ([586d221](https://github.com/mgiks/youtube-video-element/commit/586d22106c3618769c753914f84b933b6b92c70f))
+* **example:** update colors / favicon ([b9fce07](https://github.com/mgiks/youtube-video-element/commit/b9fce077e6ebbfbb124c8c52f83375b3a843953d))
+* fix suppressHydrationWarning & track/source sync ([#19](https://github.com/mgiks/youtube-video-element/issues/19)) ([586d221](https://github.com/mgiks/youtube-video-element/commit/586d22106c3618769c753914f84b933b6b92c70f))
+* **hls-video-element:** serialize config for SSR ([#128](https://github.com/mgiks/youtube-video-element/issues/128)) ([80fc30e](https://github.com/mgiks/youtube-video-element/commit/80fc30e45c1b28ffeaf3f940de072cdf46249576))
+* lint issues ([d32a387](https://github.com/mgiks/youtube-video-element/commit/d32a3874deb1e624f5c92d294aac776774d4da63))
+* muted prop for react wrappers ([#143](https://github.com/mgiks/youtube-video-element/issues/143)) ([d312f39](https://github.com/mgiks/youtube-video-element/commit/d312f392a40602312f197fb793a7a8d41b7afa61))
+* twitch video element version ([1b9b2be](https://github.com/mgiks/youtube-video-element/commit/1b9b2beebb7601ed8a34ee87b7ea1349b08591a3))
+* updating nextjs and react ([#198](https://github.com/mgiks/youtube-video-element/issues/198)) ([5c3117e](https://github.com/mgiks/youtube-video-element/commit/5c3117e60579e9567a8a268428ee295c52c2a2f4))
+* updating nextjs and react ([#201](https://github.com/mgiks/youtube-video-element/issues/201)) ([081a0c9](https://github.com/mgiks/youtube-video-element/commit/081a0c9ee1df4562172162277855f04bf66542f6))
+* upgrade dependencies ([#130](https://github.com/mgiks/youtube-video-element/issues/130)) ([afb6797](https://github.com/mgiks/youtube-video-element/commit/afb6797342db3be3d173957d44df49fd26ffafc5))
+* upgrade dependencies ([#24](https://github.com/mgiks/youtube-video-element/issues/24)) ([f5abdcf](https://github.com/mgiks/youtube-video-element/commit/f5abdcff0637e7d1f6b82f4684d94fccaceb8484))
+* version mismatch ([302f0d4](https://github.com/mgiks/youtube-video-element/commit/302f0d4714f36526eaf430991e1eabd2b8b8178c))
+* Vimeo config w/ React SSR + types ([#94](https://github.com/mgiks/youtube-video-element/issues/94)) ([c8fed3e](https://github.com/mgiks/youtube-video-element/commit/c8fed3e06282aa317d7acc67ce42f598a7fd1c4e))
+* YT config on React (SSR) + config types ([#92](https://github.com/mgiks/youtube-video-element/issues/92)) ([0894345](https://github.com/mgiks/youtube-video-element/commit/089434504e72c8b2ffcc7e63dae0e85888b7ed52))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * cloudflare-video-element bumped from ^1.3.5 to ^1.4.0
+    * dash-video-element bumped from ^0.3.2 to ^0.4.0
+    * hls-video-element bumped from ^1.5.11 to ^1.6.0
+    * jwplayer-video-element bumped from ^1.3.5 to ^1.4.0
+    * shaka-video-element bumped from ^0.7.1 to ^0.8.0
+    * spotify-audio-element bumped from ^1.0.4 to ^2.0.0
+    * peertube-video-element bumped from ^1.1.0 to ^1.2.0
+    * tiktok-video-element bumped from ^0.1.2 to ^0.2.0
+    * twitch-video-element bumped from ^0.2.0 to ^0.3.0
+    * videojs-video-element bumped from ^1.4.8 to ^1.5.0
+    * vimeo-video-element bumped from ^1.7.3 to ^1.8.0
+    * wistia-video-element bumped from ^1.4.0 to ^1.5.0
+    * youtube-video-element bumped from ^1.9.0 to ^1.10.0
+
 ## [2.1.3](https://github.com/muxinc/media-elements/compare/nextjs@2.1.2...nextjs@2.1.3) (2026-08-07)
 
 

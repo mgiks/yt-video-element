@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.2.0](https://github.com/mgiks/youtube-video-element/compare/tiktok-video-element-v0.1.2...tiktok-video-element@0.2.0) (2026-09-14)
+
+
+### Features
+
+* Create TikTok Video Element ([#133](https://github.com/mgiks/youtube-video-element/issues/133)) ([#145](https://github.com/mgiks/youtube-video-element/issues/145)) ([89cf6d3](https://github.com/mgiks/youtube-video-element/commit/89cf6d393710da96108a038530867130fe73d4d3))
+
+
+### Bug Fixes
+
+* Add share URLs to TikTok pattern matching ([#150](https://github.com/mgiks/youtube-video-element/issues/150)) ([594a207](https://github.com/mgiks/youtube-video-element/commit/594a2076c081cfe1b291aed9130bc0a78fcba623))
+* correct commit message format for volumechange youtube ([#179](https://github.com/mgiks/youtube-video-element/issues/179)) ([#188](https://github.com/mgiks/youtube-video-element/issues/188)) ([eb8ff39](https://github.com/mgiks/youtube-video-element/commit/eb8ff39d23f64072da8562aae2957c74d2491fa3))
+* Only handle messages from the corresponding iframe ([#156](https://github.com/mgiks/youtube-video-element/issues/156)) ([fd91832](https://github.com/mgiks/youtube-video-element/commit/fd918327400c07a52e02a635855665238bfc7e15))
+* Twitch issue with message handling ([8c233d1](https://github.com/mgiks/youtube-video-element/commit/8c233d13bbf552247a84e8ad77d234b7c9ccc57f))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * build-react-wrapper bumped from ^0.2.4 to ^0.3.0
+
 ## [0.1.2](https://github.com/muxinc/media-elements/compare/tiktok-video-element@0.1.1...tiktok-video-element@0.1.2) (2025-11-25)
 
 

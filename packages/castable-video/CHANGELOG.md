@@ -5,6 +5,36 @@
 [1]: https://www.npmjs.com/package/castable-video?activeTab=versions
 
 
+## [1.2.0](https://github.com/mgiks/youtube-video-element/compare/castable-video-v1.1.16...castable-video@1.2.0) (2026-09-14)
+
+
+### Features
+
+* **castable-video:** Add castCustomData to send arbitrary custom data to receiver app on load. ([dcc50be](https://github.com/mgiks/youtube-video-element/commit/dcc50be4d1bef4cf91978f8ffd97bd5f5ea908d0))
+
+
+### Bug Fixes
+
+* callback on watchAvailability bug ([#106](https://github.com/mgiks/youtube-video-element/issues/106)) ([3a6544c](https://github.com/mgiks/youtube-video-element/commit/3a6544ca6eabbd9e91dde6a90327c6d78588c314))
+* **castable-video:** Enable playback of HLS videos with .m4s segments ([#89](https://github.com/mgiks/youtube-video-element/issues/89)) ([9624547](https://github.com/mgiks/youtube-video-element/commit/9624547111e1036bfd377574b955c1c6677c4513))
+* **castable-video:** Explicitly set TS segment format to prevent playback stalling ([#162](https://github.com/mgiks/youtube-video-element/issues/162)) ([d9bbca3](https://github.com/mgiks/youtube-video-element/commit/d9bbca34b6c1817fb1bc6c881ef692717051d141))
+* chrome.cast.isAvailable fatal typeerror ([#15](https://github.com/mgiks/youtube-video-element/issues/15)) ([8a7862f](https://github.com/mgiks/youtube-video-element/commit/8a7862fbc83a47f52e03d0a81af82ca76c473038))
+* chromecast for HLS streams with separate audio renditions ([#227](https://github.com/mgiks/youtube-video-element/issues/227)) ([db67528](https://github.com/mgiks/youtube-video-element/commit/db675287b58e2ceb95ac600d4eaa1f4a018f5cee))
+* correct commit message format for volumechange youtube ([#179](https://github.com/mgiks/youtube-video-element/issues/179)) ([#188](https://github.com/mgiks/youtube-video-element/issues/188)) ([eb8ff39](https://github.com/mgiks/youtube-video-element/commit/eb8ff39d23f64072da8562aae2957c74d2491fa3))
+* correct hlsSegmentFormat for HLS streams with AAC audio in castable-video ([#234](https://github.com/mgiks/youtube-video-element/issues/234)) ([a547dc2](https://github.com/mgiks/youtube-video-element/commit/a547dc2741fee2b69378b4254ffbd07a36288d1c))
+* format castable mixin ([7271ee3](https://github.com/mgiks/youtube-video-element/commit/7271ee349933c91fbe1d5e634978d677579bd3dd))
+* media api unresponssive after session error ([#102](https://github.com/mgiks/youtube-video-element/issues/102)) ([0ee2d78](https://github.com/mgiks/youtube-video-element/commit/0ee2d78abd755a13d39280d7505330d9edd94642)), closes [#96](https://github.com/mgiks/youtube-video-element/issues/96)
+* no cast framework rq w/ disableremoteplayback ([#72](https://github.com/mgiks/youtube-video-element/issues/72)) ([fd7a34d](https://github.com/mgiks/youtube-video-element/commit/fd7a34df003a6cb7c0edf9e00df6562b5334bad3)), closes [#59](https://github.com/mgiks/youtube-video-element/issues/59)
+* Patch Memory Leaks ([#218](https://github.com/mgiks/youtube-video-element/issues/218)) ([4708538](https://github.com/mgiks/youtube-video-element/commit/47085388536970d9a7f8e41132f6ea9fbf4e07b2))
+* use private field in #castPlayer getter to avoid side effects ([#244](https://github.com/mgiks/youtube-video-element/issues/244)) ([d27f204](https://github.com/mgiks/youtube-video-element/commit/d27f20462cae66a350279c4e96b67d6912b07f9c))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * custom-media-element bumped from ~1.4.6 to ~1.5.0
+
 ## [1.1.16](https://github.com/muxinc/media-elements/compare/castable-video@1.1.15...castable-video@1.1.16) (2026-05-06)
 
 

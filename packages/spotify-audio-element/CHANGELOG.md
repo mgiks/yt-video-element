@@ -5,6 +5,37 @@
 [1]: https://www.npmjs.com/package/spotify-audio-element?activeTab=versions
 
 
+## [2.0.0](https://github.com/mgiks/youtube-video-element/compare/spotify-audio-element-v1.0.4...spotify-audio-element@2.0.0) (2026-09-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove attributes in favor of config property
+
+### Features
+
+* add better CJS + types support ([#66](https://github.com/mgiks/youtube-video-element/issues/66)) ([8aa2066](https://github.com/mgiks/youtube-video-element/commit/8aa20660faea741a264076a1464182ca283a8682)), closes [#44](https://github.com/mgiks/youtube-video-element/issues/44)
+* add SSR to spotify-audio-element ([e5d41eb](https://github.com/mgiks/youtube-video-element/commit/e5d41ebd8a3c9cef7abc41ec34f25f072c0f25ea))
+* media elements arise 🌱 ([5303770](https://github.com/mgiks/youtube-video-element/commit/530377067b9d87b464b3c4eadc93c6b210deac56))
+* use ce-la-react, fix React 19 issues ([#61](https://github.com/mgiks/youtube-video-element/issues/61)) ([0a734e9](https://github.com/mgiks/youtube-video-element/commit/0a734e94149172bfd3019cf03ac3a3e74f395ac1))
+* use config instead of attributes ([#139](https://github.com/mgiks/youtube-video-element/issues/139)) ([f4c8610](https://github.com/mgiks/youtube-video-element/commit/f4c86102e1e07f3eb2d63fa5370bfb1b9061dc5d))
+
+
+### Bug Fixes
+
+* add React SSR in cloudflare-video-element ([e7d3651](https://github.com/mgiks/youtube-video-element/commit/e7d36517ce2682a6642e3dbcb2e48875678d53bd))
+* correct commit message format for volumechange youtube ([#179](https://github.com/mgiks/youtube-video-element/issues/179)) ([#188](https://github.com/mgiks/youtube-video-element/issues/188)) ([eb8ff39](https://github.com/mgiks/youtube-video-element/commit/eb8ff39d23f64072da8562aae2957c74d2491fa3))
+* state issues ([dbc5de7](https://github.com/mgiks/youtube-video-element/commit/dbc5de783596dec7b816b7cd09790e363a5a682f))
+* update build-react-wrapper script ([5b42462](https://github.com/mgiks/youtube-video-element/commit/5b42462794192a19b730e7aaabba5646300f0a05))
+* update iframe src with config bug ([3fa1fe8](https://github.com/mgiks/youtube-video-element/commit/3fa1fe82928d077ab3cb1b060377fc8866455b31))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * build-react-wrapper bumped from ^0.2.4 to ^0.3.0
+
 ## [1.0.4](https://github.com/muxinc/media-elements/compare/spotify-audio-element@1.0.3...spotify-audio-element@1.0.4) (2025-11-25)
 
 

@@ -5,6 +5,18 @@
 [1]: https://www.npmjs.com/package/media-tracks?activeTab=versions
 
 
+## [0.3.6](https://github.com/mgiks/youtube-video-element/compare/media-tracks-v0.3.5...media-tracks@0.3.6) (2026-09-14)
+
+
+### Bug Fixes
+
+* add media-tracks package ([9042141](https://github.com/mgiks/youtube-video-element/commit/9042141b3403d6bd20a81d0d4fb803a2eb6b1cbe))
+* correct commit message format for volumechange youtube ([#179](https://github.com/mgiks/youtube-video-element/issues/179)) ([#188](https://github.com/mgiks/youtube-video-element/issues/188)) ([eb8ff39](https://github.com/mgiks/youtube-video-element/commit/eb8ff39d23f64072da8562aae2957c74d2491fa3))
+* Patch Memory Leaks ([#218](https://github.com/mgiks/youtube-video-element/issues/218)) ([4708538](https://github.com/mgiks/youtube-video-element/commit/47085388536970d9a7f8e41132f6ea9fbf4e07b2))
+* release media-tracks patch, fix missing dist ([e12b560](https://github.com/mgiks/youtube-video-element/commit/e12b5607911bb802296e2a0332f073f48cb1a4b7))
+* renaming track-event to change-event ([#186](https://github.com/mgiks/youtube-video-element/issues/186)) ([6f620ef](https://github.com/mgiks/youtube-video-element/commit/6f620efd6bae788028380e28f0e0e75275216c2b))
+* upgrade dependencies ([#24](https://github.com/mgiks/youtube-video-element/issues/24)) ([f5abdcf](https://github.com/mgiks/youtube-video-element/commit/f5abdcff0637e7d1f6b82f4684d94fccaceb8484))
+
 ## [0.3.5](https://github.com/muxinc/media-elements/compare/media-tracks@0.3.4...media-tracks@0.3.5) (2026-03-19)
 
 

@@ -5,6 +5,33 @@
 [1]: https://www.npmjs.com/package/custom-media-element?activeTab=versions
 
 
+## [1.5.0](https://github.com/mgiks/youtube-video-element/compare/custom-media-element-v1.4.6...custom-media-element@1.5.0) (2026-09-14)
+
+
+### Features
+
+* add SSR to hls and dash video element ([08a4d09](https://github.com/mgiks/youtube-video-element/commit/08a4d09c7a514e9d22a74a9b21abf7df2c27298d))
+* media elements arise 🌱 ([5303770](https://github.com/mgiks/youtube-video-element/commit/530377067b9d87b464b3c4eadc93c6b210deac56))
+* use Typescript in custom-media-element ([#51](https://github.com/mgiks/youtube-video-element/issues/51)) ([5dbfb0a](https://github.com/mgiks/youtube-video-element/commit/5dbfb0a04ebd8bff22574f3aeaf682d28cf07fb6))
+
+
+### Bug Fixes
+
+* always sync media children on slotchange ([#116](https://github.com/mgiks/youtube-video-element/issues/116)) ([30f289a](https://github.com/mgiks/youtube-video-element/commit/30f289a0bae18c00c98704221ba2e80239cf4bd4))
+* **build-react-wrapper:** fix suppressHydrationWarning ([586d221](https://github.com/mgiks/youtube-video-element/commit/586d22106c3618769c753914f84b933b6b92c70f))
+* correct commit message format for volumechange youtube ([#179](https://github.com/mgiks/youtube-video-element/issues/179)) ([#188](https://github.com/mgiks/youtube-video-element/issues/188)) ([eb8ff39](https://github.com/mgiks/youtube-video-element/commit/eb8ff39d23f64072da8562aae2957c74d2491fa3))
+* custom element attribute constructor bug ([82fe3a0](https://github.com/mgiks/youtube-video-element/commit/82fe3a02d4ddcba5e81da6211a8220da00b245fe))
+* **custom-media-element:** fix track/source sync ([586d221](https://github.com/mgiks/youtube-video-element/commit/586d22106c3618769c753914f84b933b6b92c70f))
+* fix suppressHydrationWarning & track/source sync ([#19](https://github.com/mgiks/youtube-video-element/issues/19)) ([586d221](https://github.com/mgiks/youtube-video-element/commit/586d22106c3618769c753914f84b933b6b92c70f))
+* make types more accurate ([d3b1be9](https://github.com/mgiks/youtube-video-element/commit/d3b1be9b3e3f4e4388ed4554d85e73cacad3416f))
+* missing code / changes by AI TS conversion ([#54](https://github.com/mgiks/youtube-video-element/issues/54)) ([f54dcf3](https://github.com/mgiks/youtube-video-element/commit/f54dcf3e26b33223a5306c3d733521cd3388b62a))
+* Patch Memory Leaks ([#218](https://github.com/mgiks/youtube-video-element/issues/218)) ([4708538](https://github.com/mgiks/youtube-video-element/commit/47085388536970d9a7f8e41132f6ea9fbf4e07b2))
+* SSR non video attrs ([#69](https://github.com/mgiks/youtube-video-element/issues/69)) ([67c7141](https://github.com/mgiks/youtube-video-element/commit/67c7141ccd43b4aeed81e536defb78f8fc580500))
+* types for mixins ([#111](https://github.com/mgiks/youtube-video-element/issues/111)) ([1b3e5e9](https://github.com/mgiks/youtube-video-element/commit/1b3e5e9153d94c02ca2ddd2c4e643f4a4163c8cf))
+* update track/source clone attributes ([#49](https://github.com/mgiks/youtube-video-element/issues/49)) ([b4d8a4b](https://github.com/mgiks/youtube-video-element/commit/b4d8a4b782c52bcc969aacc2cd9deeef4b7e2b11))
+* upgrade dependencies ([#24](https://github.com/mgiks/youtube-video-element/issues/24)) ([f5abdcf](https://github.com/mgiks/youtube-video-element/commit/f5abdcff0637e7d1f6b82f4684d94fccaceb8484))
+* use media slot ([#52](https://github.com/mgiks/youtube-video-element/issues/52)) ([d80267e](https://github.com/mgiks/youtube-video-element/commit/d80267e0df1857fdd03020b408411b9b7223caf9))
+
 ## [1.4.6](https://github.com/muxinc/media-elements/compare/custom-media-element@1.4.5...custom-media-element@1.4.6) (2026-03-19)
 
 

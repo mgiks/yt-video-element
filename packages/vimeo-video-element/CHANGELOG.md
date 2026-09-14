@@ -5,6 +5,46 @@
 [1]: https://www.npmjs.com/package/vimeo-video-element?activeTab=versions
 
 
+## [1.8.0](https://github.com/mgiks/youtube-video-element/compare/vimeo-video-element-v1.7.3...vimeo-video-element@1.8.0) (2026-09-14)
+
+
+### Features
+
+* add better CJS + types support ([#66](https://github.com/mgiks/youtube-video-element/issues/66)) ([8aa2066](https://github.com/mgiks/youtube-video-element/commit/8aa20660faea741a264076a1464182ca283a8682)), closes [#44](https://github.com/mgiks/youtube-video-element/issues/44)
+* add config property to vimeo-video ([#88](https://github.com/mgiks/youtube-video-element/issues/88)) ([8d19588](https://github.com/mgiks/youtube-video-element/commit/8d19588702072a710f4c27f5eaf1d8df1e1a22f2))
+* Add played ranges tracking to iframe based media elements ([#199](https://github.com/mgiks/youtube-video-element/issues/199)) ([f15c263](https://github.com/mgiks/youtube-video-element/commit/f15c2635cc75cd0df954b1037d13c32269a1243c))
+* add SSR to vimeo-video-element ([c44e755](https://github.com/mgiks/youtube-video-element/commit/c44e755a57c252631971b17b0f3b1607ac0ec70f))
+* media elements arise 🌱 ([5303770](https://github.com/mgiks/youtube-video-element/commit/530377067b9d87b464b3c4eadc93c6b210deac56))
+* use ce-la-react, fix React 19 issues ([#61](https://github.com/mgiks/youtube-video-element/issues/61)) ([0a734e9](https://github.com/mgiks/youtube-video-element/commit/0a734e94149172bfd3019cf03ac3a3e74f395ac1))
+* Vimeo fullscreen & PiP via API to avoid Apple iframe restriction ([#122](https://github.com/mgiks/youtube-video-element/issues/122)) ([bff8f09](https://github.com/mgiks/youtube-video-element/commit/bff8f09e9f4799986c29b11b96df5117efb9b74a))
+* **vimeo:** add TextTrack support using Vimeo API and add media-tracks integration ([#163](https://github.com/mgiks/youtube-video-element/issues/163)) ([fdf8c12](https://github.com/mgiks/youtube-video-element/commit/fdf8c12b63b16a0d76a389b76a2b5a9ed4e153ba))
+
+
+### Bug Fixes
+
+* `&lt;vimeo-video&gt;` element race condition ([#220](https://github.com/mgiks/youtube-video-element/issues/220)) ([6265f6c](https://github.com/mgiks/youtube-video-element/commit/6265f6c12ff5cb2fd458f39a6464d729d56ec6d9))
+* add React SSR in cloudflare-video-element ([e7d3651](https://github.com/mgiks/youtube-video-element/commit/e7d36517ce2682a6642e3dbcb2e48875678d53bd))
+* correct commit message format for volumechange youtube ([#179](https://github.com/mgiks/youtube-video-element/issues/179)) ([#188](https://github.com/mgiks/youtube-video-element/issues/188)) ([eb8ff39](https://github.com/mgiks/youtube-video-element/commit/eb8ff39d23f64072da8562aae2957c74d2491fa3))
+* correct url generation for vimeo events ([#183](https://github.com/mgiks/youtube-video-element/issues/183)) ([1d35378](https://github.com/mgiks/youtube-video-element/commit/1d3537865cca673939562e48c37fa8c224278df4))
+* Match params for unlisted videos ([#43](https://github.com/mgiks/youtube-video-element/issues/43)) ([d2abefc](https://github.com/mgiks/youtube-video-element/commit/d2abefcfff370bf26232331abbb009aaf02108fb))
+* normalize undefined Vimeo config to null to prevent unnecessary reload ([#251](https://github.com/mgiks/youtube-video-element/issues/251)) ([68b5b45](https://github.com/mgiks/youtube-video-element/commit/68b5b45d491e980044d7aaaf69328b24cb3c2681))
+* pass hash as URL param instead of query ([#221](https://github.com/mgiks/youtube-video-element/issues/221)) ([c134df8](https://github.com/mgiks/youtube-video-element/commit/c134df8e5d912961e5f81a07a34181dd85e29c34))
+* state issues ([dbc5de7](https://github.com/mgiks/youtube-video-element/commit/dbc5de783596dec7b816b7cd09790e363a5a682f))
+* support both path and query string formats for unlisted video hash ([#203](https://github.com/mgiks/youtube-video-element/issues/203)) ([106bd26](https://github.com/mgiks/youtube-video-element/commit/106bd26e605f3e51a126a404df8ba7c4790a570b))
+* support for unlisted Vimeo videos ([#195](https://github.com/mgiks/youtube-video-element/issues/195)) ([37ed558](https://github.com/mgiks/youtube-video-element/commit/37ed5589319debe1a75f105cdf70de2af5e20cef))
+* update build-react-wrapper script ([5b42462](https://github.com/mgiks/youtube-video-element/commit/5b42462794192a19b730e7aaabba5646300f0a05))
+* update MATCH_SRC to include vimeo/event/:id URLs. ([#159](https://github.com/mgiks/youtube-video-element/issues/159)) ([9db6656](https://github.com/mgiks/youtube-video-element/commit/9db6656923b2ceb667258bf8171b5671a4f4033b))
+* upgrade dependencies ([#130](https://github.com/mgiks/youtube-video-element/issues/130)) ([afb6797](https://github.com/mgiks/youtube-video-element/commit/afb6797342db3be3d173957d44df49fd26ffafc5))
+* Vimeo config w/ React SSR + types ([#94](https://github.com/mgiks/youtube-video-element/issues/94)) ([c8fed3e](https://github.com/mgiks/youtube-video-element/commit/c8fed3e06282aa317d7acc67ce42f598a7fd1c4e))
+* vimeo setter error due to nil value ([42ab3e7](https://github.com/mgiks/youtube-video-element/commit/42ab3e72a46662fb597e3150adad66396fbc3639))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * build-react-wrapper bumped from ^0.2.4 to ^0.3.0
+
 ## [1.7.3](https://github.com/muxinc/media-elements/compare/vimeo-video-element@1.7.2...vimeo-video-element@1.7.3) (2026-08-07)
 
 

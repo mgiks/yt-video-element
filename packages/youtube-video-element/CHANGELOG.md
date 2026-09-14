@@ -5,6 +5,43 @@
 [1]: https://www.npmjs.com/package/youtube-video-element?activeTab=versions
 
 
+## [1.10.0](https://github.com/mgiks/youtube-video-element/compare/youtube-video-element-v1.9.0...youtube-video-element@1.10.0) (2026-09-14)
+
+
+### Features
+
+* add better CJS + types support ([#66](https://github.com/mgiks/youtube-video-element/issues/66)) ([8aa2066](https://github.com/mgiks/youtube-video-element/commit/8aa20660faea741a264076a1464182ca283a8682)), closes [#44](https://github.com/mgiks/youtube-video-element/issues/44)
+* Add event dispatch for youtube errors ([#78](https://github.com/mgiks/youtube-video-element/issues/78)) ([54528b2](https://github.com/mgiks/youtube-video-element/commit/54528b21b234a79760a2e5b823884c5abf55af52))
+* Add played ranges tracking to iframe based media elements ([#199](https://github.com/mgiks/youtube-video-element/issues/199)) ([f15c263](https://github.com/mgiks/youtube-video-element/commit/f15c2635cc75cd0df954b1037d13c32269a1243c))
+* Add referrerPolicy support in youtube video ([#189](https://github.com/mgiks/youtube-video-element/issues/189)) ([7345853](https://github.com/mgiks/youtube-video-element/commit/734585340300f3c80b7f1775e6174ecba8720fda))
+* add SSR to vimeo-video-element ([c44e755](https://github.com/mgiks/youtube-video-element/commit/c44e755a57c252631971b17b0f3b1607ac0ec70f))
+* add support for youtube t parameter ([#197](https://github.com/mgiks/youtube-video-element/issues/197)) ([b183151](https://github.com/mgiks/youtube-video-element/commit/b1831517a2b5b0b20ab4ffa7ad4ffbbf1e541b5c))
+* add YT config property ([#91](https://github.com/mgiks/youtube-video-element/issues/91)) ([f661eb4](https://github.com/mgiks/youtube-video-element/commit/f661eb4a5ce0dd49351264e78f5dbf73fbe77cb0))
+* media elements arise 🌱 ([5303770](https://github.com/mgiks/youtube-video-element/commit/530377067b9d87b464b3c4eadc93c6b210deac56))
+* use ce-la-react, fix React 19 issues ([#61](https://github.com/mgiks/youtube-video-element/issues/61)) ([0a734e9](https://github.com/mgiks/youtube-video-element/commit/0a734e94149172bfd3019cf03ac3a3e74f395ac1))
+* **youtube-video:** add playlist support ([#134](https://github.com/mgiks/youtube-video-element/issues/134)) ([34f7469](https://github.com/mgiks/youtube-video-element/commit/34f7469b4b8204d92346ccb911c6a734632621d3))
+* **youtube:** add TextTrack support using Youtube API and add media-tracks integration ([#166](https://github.com/mgiks/youtube-video-element/issues/166)) ([c76eae6](https://github.com/mgiks/youtube-video-element/commit/c76eae6d349bd42b87b157ea02302d7015af4d7a))
+
+
+### Bug Fixes
+
+* add React SSR in cloudflare-video-element ([e7d3651](https://github.com/mgiks/youtube-video-element/commit/e7d36517ce2682a6642e3dbcb2e48875678d53bd))
+* add React SSR to youtube-video-element ([cd2e574](https://github.com/mgiks/youtube-video-element/commit/cd2e57455a1401850db2a2a5c26bc6190af4191b))
+* correct commit message format for volumechange youtube ([#179](https://github.com/mgiks/youtube-video-element/issues/179)) ([#188](https://github.com/mgiks/youtube-video-element/issues/188)) ([eb8ff39](https://github.com/mgiks/youtube-video-element/commit/eb8ff39d23f64072da8562aae2957c74d2491fa3))
+* duplicate iframe load ([8a532f2](https://github.com/mgiks/youtube-video-element/commit/8a532f2f23d9d5dd5d80773c9cfc88a8cab1d69c))
+* state issues ([dbc5de7](https://github.com/mgiks/youtube-video-element/commit/dbc5de783596dec7b816b7cd09790e363a5a682f))
+* update build-react-wrapper script ([5b42462](https://github.com/mgiks/youtube-video-element/commit/5b42462794192a19b730e7aaabba5646300f0a05))
+* Update cc_load_policy type to allow 0 or 1 ([#194](https://github.com/mgiks/youtube-video-element/issues/194)) ([2952dde](https://github.com/mgiks/youtube-video-element/commit/2952dde80a96b1b3c3b9cdcdf95654d79032bcf6))
+* **youtube-video-element:** support -nocookie ([#125](https://github.com/mgiks/youtube-video-element/issues/125)) ([159199d](https://github.com/mgiks/youtube-video-element/commit/159199d819273b201c7ce370801724b4167d7949))
+* YT config on React (SSR) + config types ([#92](https://github.com/mgiks/youtube-video-element/issues/92)) ([0894345](https://github.com/mgiks/youtube-video-element/commit/089434504e72c8b2ffcc7e63dae0e85888b7ed52))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * build-react-wrapper bumped from ^0.2.4 to ^0.3.0
+
 ## [1.9.0](https://github.com/muxinc/media-elements/compare/youtube-video-element@1.8.1...youtube-video-element@1.9.0) (2026-02-17)
 
 

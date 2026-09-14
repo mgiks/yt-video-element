@@ -5,6 +5,34 @@
 [1]: https://www.npmjs.com/package/videojs-video-element?activeTab=versions
 
 
+## [1.5.0](https://github.com/mgiks/youtube-video-element/compare/videojs-video-element-v1.4.8...videojs-video-element@1.5.0) (2026-09-14)
+
+
+### Features
+
+* add better CJS + types support ([#66](https://github.com/mgiks/youtube-video-element/issues/66)) ([8aa2066](https://github.com/mgiks/youtube-video-element/commit/8aa20660faea741a264076a1464182ca283a8682)), closes [#44](https://github.com/mgiks/youtube-video-element/issues/44)
+* media elements arise 🌱 ([5303770](https://github.com/mgiks/youtube-video-element/commit/530377067b9d87b464b3c4eadc93c6b210deac56))
+* use ce-la-react, fix React 19 issues ([#61](https://github.com/mgiks/youtube-video-element/issues/61)) ([0a734e9](https://github.com/mgiks/youtube-video-element/commit/0a734e94149172bfd3019cf03ac3a3e74f395ac1))
+
+
+### Bug Fixes
+
+* add React SSR in cloudflare-video-element ([e7d3651](https://github.com/mgiks/youtube-video-element/commit/e7d36517ce2682a6642e3dbcb2e48875678d53bd))
+* avoid AbortError when play() is called after ended in videojs-video-element ([#230](https://github.com/mgiks/youtube-video-element/issues/230)) ([29419ba](https://github.com/mgiks/youtube-video-element/commit/29419ba139a82241189174d4351cf17421d37331))
+* correct commit message format for volumechange youtube ([#179](https://github.com/mgiks/youtube-video-element/issues/179)) ([#188](https://github.com/mgiks/youtube-video-element/issues/188)) ([eb8ff39](https://github.com/mgiks/youtube-video-element/commit/eb8ff39d23f64072da8562aae2957c74d2491fa3))
+* state issues ([dbc5de7](https://github.com/mgiks/youtube-video-element/commit/dbc5de783596dec7b816b7cd09790e363a5a682f))
+* update build-react-wrapper script ([5b42462](https://github.com/mgiks/youtube-video-element/commit/5b42462794192a19b730e7aaabba5646300f0a05))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * media-tracks bumped from ^0.3.5 to ^0.3.6
+    * super-media-element bumped from ~1.4.2 to ~1.5.0
+  * devDependencies
+    * build-react-wrapper bumped from ^0.2.4 to ^0.3.0
+
 ## [1.4.8](https://github.com/muxinc/media-elements/compare/videojs-video-element@1.4.7...videojs-video-element@1.4.8) (2026-04-29)
 
 
